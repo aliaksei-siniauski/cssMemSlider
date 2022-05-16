@@ -143,3 +143,29 @@ article {
   justify-content: center;
   align-items: center;
 }
+
+/* Slider navigation */
+
+.slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+/* Slider text */
+
+.slider-text {
+  display: flex;
+  width: 300%;
+  overflow: hidden;
+  padding-left: 1%;
+  font-size: 2vw;
+}
+
+.text {
+  width: 100%;
+  min-width: 100%;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
