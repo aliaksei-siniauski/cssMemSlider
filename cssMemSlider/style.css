@@ -1,0 +1,291 @@
+/* Reset style */
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  font-size: 2rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.3;
+  background: rgba(41, 41, 41, 0.6);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[name='radio'] {
+  visibility: hidden;
+}
+
+section,
+main,
+footer,
+header,
+article {
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Slider-wrapper */
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  padding: 1% 3%;
+  margin: 0 auto;
+}
+
+/* Slider */
+
+.slider {
+  width: 200%;
+  height: 100%;
+  box-shadow: 1rem 2rem 3rem 4rem rgba(20, 20, 20, 0.4);
+  border-radius: 1vh;
+  overflow: hidden;
+}
+.slider-items {
+  width: 400%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 1%;
+}
+
+/* Work with sldier items */
+
+.item {
+  width: 25%;
+  transition: all 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slider navigation */
+
+.slider-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1%;
+}
+
+/* Slider text */
+
+.slider-text {
+  display: flex;
+  align-items: center;
+  width: 200%;
+  overflow: hidden;
+  padding-left: 1%;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.text {
+  min-width: 100%;
+  color: wheat;
+}
+
+/* Slider controls */
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+}
+
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.6rem 0.1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.control-cicle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: gainsboro;
+}
+.control:hover .control-cicle {
+  background: bisque;
+  transform: scale(1.5);
+}
+.control:active .control-cicle {
+  background: Orange;
+  transform: scale(1);
+}
+
+/* Check sliders and descriptions */
+
+#slide1:checked ~ .slider-items {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide2:checked ~ .slider-items {
+  transform: translateX(-25%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide3:checked ~ .slider-items {
+  transform: translateX(-50%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide4:checked ~ .slider-items {
+  transform: translateX(-75%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide1:checked ~ .slider-navigation .slider-text .text {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide2:checked ~ .slider-navigation .slider-text .text {
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide3:checked ~ .slider-navigation .slider-text .text {
+  transform: translateX(-200%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#slide4:checked ~ .slider-navigation .slider-text .text {
+  transform: translateX(-300%);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Media queary */
+
+@media (max-width: 1024px) {
+  .slider-wrapper {
+    max-width: 100%;
+  }
+  .slider-text {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 590px) and (max-width: 1100px) {
+  .slider-wrapper {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .slider-text {
+    text-align: center;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  .slider-navigation {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .slider-controls {
+    width: 50%;
+    padding-top: 2%;
+  }
+  .control {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .control-cicle {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: gainsboro;
+  }
+}
