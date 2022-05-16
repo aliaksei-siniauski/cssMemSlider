@@ -243,8 +243,8 @@ article {
 
 /* Media queary */
 
-/* @media (max-width: 1000px) {
+@media (max-width: 1000px) {
   .slider-wrapper {
     max-width: 80%;
   }
-} */
+}
